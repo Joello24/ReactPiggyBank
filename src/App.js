@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import PiggyBank from './PiggyBank';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Piggy Bank</h1>
+      <PiggyBank />
+      <PiggyBank coinConfig={[
+        { amount: 0.50, maxClicks: 4 },
+        { amount: 0.25, maxClicks: 4 }
+      ]} />
+      <PiggyBank coinConfig={[
+        { amount: 0.01, maxClicks: 6 },
+        { amount: 0.02, maxClicks: 3 },
+        { amount: 0.03, maxClicks: 2 }
+      ]} />
     </div>
   );
 }
